@@ -1,48 +1,48 @@
-import { useRef } from 'react';
+import { HTMLAttributes, useRef } from 'react';
 
 import Img from 'next/image';
 
-interface NavigationSlideProps {
+import { ArrowLeft } from '../icons/arrowLeft';
+
+interface NavigationSlideProps extends HTMLAttributes<HTMLDivElement> {
   swiper: any;
-  spacingX?: string;
-  spacingY?: string;
+  className?: string;
   classNameLeft?: string;
   classNameRight?: string;
+  boxSize?: string | number;
 }
 
 export function NavigationSlide({
   swiper,
+  className = '',
   classNameLeft = '',
   classNameRight = '',
+  boxSize = 18,
+  ...rest
 }: NavigationSlideProps) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
   return (
-    <div className="z-10 border-red-50 border">
+    <div className={`border-red-50 flex gap-4 ${className}`} {...rest}>
       <div
-        className={`flex prev button p-[2px 6px] w-[12px] h-[20px] ${classNameLeft} overflow-hidden`}
+        className={`flex prev button transition cursor-pointer hover:text-black-600 ${classNameLeft}`}
         ref={prevRef}
         onClick={() => swiper?.slidePrev()}
       >
-        <Img
-          src="/icons/left.png"
-          alt="Passar slide para esquerda"
-          width={12}
-          height={12}
-        />
+        <ArrowLeft className="text-red-500" />
       </div>
 
       <div
-        className={`flex next button p-[2px 6px] w-[12px] h-[20px] ${classNameRight}`}
+        className={`flex next button transition cursor-pointer hover:bg-primary-400 rounded-md py-[1px] pl-[2px] ${classNameRight}`}
         ref={nextRef}
         onClick={() => swiper?.slideNext()}
       >
         <Img
-          src="/icons/right.png"
+          src="/icons/right.svg"
           alt="Passar slide para direita"
-          width={12}
-          height={12}
+          width={Number(boxSize)}
+          height={Number(boxSize)}
         />
       </div>
     </div>

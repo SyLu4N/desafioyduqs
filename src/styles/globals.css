@@ -41,3 +41,47 @@ h1 {
   font-weight: bold;
   color: #12284c;
 }
+
+.text-shadow-sm {
+  text-shadow: 1px 0px 3px rgba(0, 0, 0, 0.719);
+}
+
+.swiper-block {
+  span {
+    display: block;
+  }
+}
+
+.swiper-inline {
+  span {
+    display: inline-block;
+  }
+}
+
+.swiper-pagination-bullet {
+  position: relative;
+  z-index: 99;
+  opacity: 1;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid white;
+  width: 10px;
+  height: 10px;
+  transition: 150ms all;
+}
+
+.swiper-pagination-bullet-active:before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white;
+  opacity: 1;
+}

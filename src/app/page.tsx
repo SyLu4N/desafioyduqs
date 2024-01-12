@@ -1,9 +1,5 @@
-import { Banner } from '@/content/banner';
+import { Home as HomeElement } from '@/content/home';
 
 export default function Home() {
-  return (
-    <main>
-      <Banner />
-    </main>
-  );
+  return <HomeElement />;
 }
