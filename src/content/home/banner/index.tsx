@@ -51,7 +51,6 @@ export function Banner() {
 
                     <NavigationSlide
                       swiper={swiper}
-                      boxSize={22}
                       className="hidden lg:flex"
                     />
                   </div>

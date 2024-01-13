@@ -10,9 +10,9 @@ import { SwiperSlide } from 'swiper/react';
 
 const cards = [
   { card: 'cards-2.png', alt: 'Card Nossa estratégia' },
-  { card: 'cards.png', alt: 'Card nossas unidades de negocio' },
+  { card: 'banner-img.png', alt: 'Card nossas unidades de negocio' },
   { card: 'cards-3.png', alt: 'Card nosso impacto' },
-  { card: 'cards-4.png', alt: 'Card quem somos' },
+  { card: 'banner-img-3.png', alt: 'Card quem somos' },
 ];
 
 export function Cards() {
@@ -33,30 +33,35 @@ export function Cards() {
   }, []);
 
   return (
-    <>
+    <div className="max-w-[1440px]">
       <Slide
         pagination={{ clickable: true, el: '.swiper-pagination' }}
         modules={[A11y, Scrollbar, Pagination]}
         onSwiper={(swiper) => setSwiper(swiper)}
+        slidesPerView={1.1}
         breakpoints={{
-          300: { slidesPerView: 1.1 },
+          450: { slidesPerView: 1.5 },
 
-          540: { slidesPerView: 2 },
+          600: { slidesPerView: 2.1 },
 
-          650: { slidesPerView: 2.5 },
+          820: { slidesPerView: 2.5 },
 
-          850: { slidesPerView: 3 },
+          950: { slidesPerView: 3.1 },
 
-          900: { slidesPerView: 4 },
+          1220: { slidesPerView: 3.5 },
+
+          1440: { slidesPerView: 4 },
         }}
       >
         {cards?.map((card) => (
           <SwiperSlide key={card.card}>
-            <img
-              src={`/assets/${card.card}`}
-              alt="Banner de apresentação"
-              className="w-[1032px] h-[450px] lg:h-[500px]"
-            />
+            <div className="relative flex justify-center overflow-hidden h-[450px]">
+              <img
+                src={`/assets/${card.card}`}
+                alt="Banner de apresentação"
+                className="absolute object-cover w-full h-full"
+              />
+            </div>
           </SwiperSlide>
         ))}
 
@@ -64,12 +69,13 @@ export function Cards() {
           <NavigationSlide
             swiper={swiper}
             className=" border-black justify-around"
-            boxSize={22}
           />
 
-          <PaginationSlide classNameContainer="bottom-[-32%] left-[1%]" />
+          <div className="absolute flex justify-center border-blue-50">
+            <PaginationSlide classNameContainer="!static max-w-[80px] m-auto" />
+          </div>
         </div>
       </Slide>
-    </>
+    </div>
   );
 }
