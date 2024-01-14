@@ -1,12 +1,12 @@
 import { Banner } from './banner';
 import { Cards } from './cards';
-import { Paths } from './Paths';
+import { Shortcut } from './shortcut';
 
 export function Home() {
   return (
     <main>
       <Banner />
-      <Paths />
+      <Shortcut />
       <Cards />
     </main>
   );

@@ -65,8 +65,8 @@ h1 {
   background-color: transparent;
   border-radius: 50%;
   border: 1px solid white;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   transition: 150ms all;
 }
 

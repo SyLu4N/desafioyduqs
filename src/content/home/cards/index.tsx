@@ -2,21 +2,32 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { AboutUs } from '@/components/icons/about-us';
+import { Book } from '@/components/icons/book';
+import { Strategy } from '@/components/icons/strategy';
+import { World } from '@/components/icons/world';
 import { Slide } from '@/components/Slide';
 import { NavigationSlide } from '@/components/Slide/navigationSlide';
 import { PaginationSlide } from '@/components/Slide/paginationSlide';
 import { A11y, Pagination, Scrollbar } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 
+import { Card } from './card';
+
 const cards = [
-  { card: 'cards-2.png', alt: 'Card Nossa estratégia' },
-  { card: 'banner-img.png', alt: 'Card nossas unidades de negocio' },
-  { card: 'cards-3.png', alt: 'Card nosso impacto' },
-  { card: 'banner-img-3.png', alt: 'Card quem somos' },
+  { src: 'cards.jpg', alt: 'Card Nossa estratégia', icon: <Book /> },
+  {
+    src: 'cards-4.jpg',
+    alt: 'Card nossas unidades de negocio',
+    icon: <Strategy />,
+  },
+  { src: 'cards-3.jpg', alt: 'Card nosso impacto', icon: <World /> },
+  { src: 'cards-2.jpg', alt: 'Card quem somos', icon: <AboutUs /> },
 ];
 
 export function Cards() {
   const [swiper, setSwiper] = useState<any>(null);
+
   const bulletRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,7 +44,7 @@ export function Cards() {
   }, []);
 
   return (
-    <div className="max-w-[1440px]">
+    <div>
       <Slide
         pagination={{ clickable: true, el: '.swiper-pagination' }}
         modules={[A11y, Scrollbar, Pagination]}
@@ -54,14 +65,8 @@ export function Cards() {
         }}
       >
         {cards?.map((card) => (
-          <SwiperSlide key={card.card}>
-            <div className="relative flex justify-center overflow-hidden h-[450px]">
-              <img
-                src={`/assets/${card.card}`}
-                alt="Banner de apresentação"
-                className="absolute object-cover w-full h-full"
-              />
-            </div>
+          <SwiperSlide key={card.src}>
+            <Card card={card} />
           </SwiperSlide>
         ))}
 

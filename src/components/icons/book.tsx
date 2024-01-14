@@ -3,7 +3,7 @@ interface ArrowProps {
   color?: string;
 }
 
-export function Book({ className = '', color = '#00ADBB' }: ArrowProps) {
+export function Book({ className = '', color = '#12284c' }: ArrowProps) {
   return (
     <svg
       width="64"
