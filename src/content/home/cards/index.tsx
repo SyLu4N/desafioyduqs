@@ -14,17 +14,6 @@ import { SwiperSlide } from 'swiper/react';
 
 import { Card } from './card';
 
-const cards = [
-  { src: 'cards.jpg', alt: 'Card Nossa estratégia', icon: <Book /> },
-  {
-    src: 'cards-4.jpg',
-    alt: 'Card nossas unidades de negocio',
-    icon: <Strategy />,
-  },
-  { src: 'cards-3.jpg', alt: 'Card nosso impacto', icon: <World /> },
-  { src: 'cards-2.jpg', alt: 'Card quem somos', icon: <AboutUs /> },
-];
-
 export function Cards() {
   const [swiper, setSwiper] = useState<any>(null);
 
@@ -64,11 +53,41 @@ export function Cards() {
           1440: { slidesPerView: 4 },
         }}
       >
-        {cards?.map((card) => (
-          <SwiperSlide key={card.src}>
-            <Card card={card} />
-          </SwiperSlide>
-        ))}
+        <SwiperSlide>
+          <Card
+            src="/assets/cards.jpg"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
+            Icon={Book}
+            title="Nossa estratégia"
+          />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <Card
+            src="/assets/cards-4.jpg"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
+            Icon={Strategy}
+            title="Nossas unidades de negocio"
+          />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <Card
+            src="/assets/cards-3.jpg"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
+            Icon={World}
+            title="Nosso impacto (ESG)"
+          />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <Card
+            src="/assets/cards-2.jpg"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
+            Icon={AboutUs}
+            title="Quem Somos"
+          />
+        </SwiperSlide>
 
         <div className="relative p-4" ref={bulletRef}>
           <NavigationSlide
