@@ -26,7 +26,7 @@ export function NavigationSlide({
         ref={prevRef}
         onClick={() => swiper?.slidePrev()}
       >
-        <Arrow className="size-6" />
+        <Arrow className="size-6 text-secundary-500" />
       </div>
 
       <div
@@ -34,7 +34,7 @@ export function NavigationSlide({
         ref={nextRef}
         onClick={() => swiper?.slideNext()}
       >
-        <Arrow className="rotate-180 size-6" />
+        <Arrow className="rotate-180 size-6 text-secundary-500" />
       </div>
     </div>
   );

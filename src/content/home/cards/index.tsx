@@ -55,19 +55,19 @@ export function Cards() {
       >
         <SwiperSlide>
           <Card
-            src="/assets/cards.jpg"
+            src="/assets/cards-4.jpg"
             text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
             Icon={Book}
-            title="Nossa estratégia"
+            title="Nossas unidades de negocio"
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <Card
-            src="/assets/cards-4.jpg"
+            src="/assets/cards.jpg"
             text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
             Icon={Strategy}
-            title="Nossas unidades de negocio"
+            title="Nossa estratégia"
           />
         </SwiperSlide>
 

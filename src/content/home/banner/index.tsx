@@ -72,7 +72,7 @@ export function Banner() {
           ))}
 
           <PaginationSlide
-            classNameContainer="lg:right-[5%] lg:top-[62%] lg:w-auto lg:bottom-auto"
+            classNameContainer="lg:right-[5%] lg:top-[50%] lg:w-auto lg:bottom-auto"
             className="lg:flex-col"
           />
         </Slide>
