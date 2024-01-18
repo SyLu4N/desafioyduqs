@@ -16,6 +16,16 @@ import { Card } from './card';
 
 export function Cards() {
   const [swiper, setSwiper] = useState<any>(null);
+  const [isLastSlide, setIsLastSlide] = useState(false);
+
+  function verifySwiper() {
+    if (!swiper) return;
+
+    if (swiper.isEnd && swiper.isBeginning) return setIsLastSlide(true);
+    setIsLastSlide(false);
+    console.log('oi');
+    return;
+  }
 
   const bulletRef = useRef<HTMLDivElement>(null);
 
@@ -32,13 +42,19 @@ export function Cards() {
     });
   }, []);
 
+  useEffect(() => {
+    verifySwiper();
+  }, [swiper]);
+
   return (
-    <div>
+    <>
       <Slide
         pagination={{ clickable: true, el: '.swiper-pagination' }}
         modules={[A11y, Scrollbar, Pagination]}
         onSwiper={(swiper) => setSwiper(swiper)}
         slidesPerView={1.1}
+        onSlideChange={verifySwiper}
+        onBreakpoint={verifySwiper}
         breakpoints={{
           450: { slidesPerView: 1.5 },
 
@@ -89,17 +105,19 @@ export function Cards() {
           />
         </SwiperSlide>
 
-        <div className="relative p-4" ref={bulletRef}>
-          <NavigationSlide
-            swiper={swiper}
-            className=" border-black justify-around"
-          />
+        {!isLastSlide && (
+          <div className="relative p-4" ref={bulletRef}>
+            <NavigationSlide
+              swiper={swiper}
+              className=" border-black justify-around"
+            />
 
-          <div className="absolute flex justify-center border-blue-50">
-            <PaginationSlide classNameContainer="!static max-w-[80px] m-auto" />
+            <div className="absolute flex justify-center border-blue-50">
+              <PaginationSlide classNameContainer="!static max-w-[80px] m-auto" />
+            </div>
           </div>
-        </div>
+        )}
       </Slide>
-    </div>
+    </>
   );
 }

@@ -59,29 +59,32 @@ export function Header() {
         <Img
           src="/language/en-square.png"
           alt="Alterar linguagem"
-          width={22}
-          height={14}
+          width={0}
+          height={0}
         />
 
         <Img
           src="/icons/sino-hover.png"
           alt="Sino de notificações"
-          height={16}
-          width={16}
+          height={0}
+          width={0}
+          className="h-[16px] w-[16px]"
         />
 
         <Img
           src="/icons/busca.png"
           alt="Lupa para buscar"
-          width={16}
-          height={16}
+          width={0}
+          height={0}
+          className="h-[16px] w-[16px]"
         />
 
         <Img
           src="/icons/nav.png"
           alt="Icone de hamburguer para o menu"
-          width={32}
-          height={32}
+          width={0}
+          height={0}
+          className="h-[32px] w-[32px]"
         />
       </div>
     </header>
