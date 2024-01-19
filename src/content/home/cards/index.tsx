@@ -9,6 +9,7 @@ import { World } from '@/components/icons/world';
 import { Slide } from '@/components/Slide';
 import { NavigationSlide } from '@/components/Slide/navigationSlide';
 import { PaginationSlide } from '@/components/Slide/paginationSlide';
+import Swiper from 'swiper';
 import { A11y, Pagination, Scrollbar } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 
@@ -18,13 +19,12 @@ export function Cards() {
   const [swiper, setSwiper] = useState<any>(null);
   const [isLastSlide, setIsLastSlide] = useState(false);
 
-  function verifySwiper() {
-    if (!swiper) return;
+  function verifySwiper(mySwiper: Swiper) {
+    if (!mySwiper) return;
 
-    if (swiper.isEnd && swiper.isBeginning) return setIsLastSlide(true);
-    setIsLastSlide(false);
-    console.log('oi');
-    return;
+    if (mySwiper.isEnd && mySwiper.isBeginning) return setIsLastSlide(true);
+
+    return setIsLastSlide(false);
   }
 
   const bulletRef = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ export function Cards() {
   }, []);
 
   useEffect(() => {
-    verifySwiper();
+    verifySwiper(swiper);
   }, [swiper]);
 
   return (
@@ -52,19 +52,18 @@ export function Cards() {
         pagination={{ clickable: true, el: '.swiper-pagination' }}
         modules={[A11y, Scrollbar, Pagination]}
         onSwiper={(swiper) => setSwiper(swiper)}
+        onResize={verifySwiper}
         slidesPerView={1.1}
-        onSlideChange={verifySwiper}
-        onBreakpoint={verifySwiper}
         breakpoints={{
           450: { slidesPerView: 1.5 },
 
-          600: { slidesPerView: 2.1 },
+          600: { slidesPerView: 2 },
 
-          820: { slidesPerView: 2.5 },
+          820: { slidesPerView: 2 },
 
-          950: { slidesPerView: 3.1 },
+          950: { slidesPerView: 2 },
 
-          1220: { slidesPerView: 3.5 },
+          1220: { slidesPerView: 2 },
 
           1440: { slidesPerView: 4 },
         }}
@@ -106,14 +105,20 @@ export function Cards() {
         </SwiperSlide>
 
         {!isLastSlide && (
-          <div className="relative p-4" ref={bulletRef}>
+          <div
+            className="flex justify-center items-center relative p-4"
+            ref={bulletRef}
+          >
             <NavigationSlide
               swiper={swiper}
-              className=" border-black justify-around"
+              className=" border-black justify-around w-full"
             />
 
-            <div className="absolute flex justify-center border-blue-50">
-              <PaginationSlide classNameContainer="!static max-w-[80px] m-auto" />
+            <div className="absolute flex justify-center">
+              <PaginationSlide
+                classNameContainer="!static max-w-[80px] m-auto"
+                className="mb-0"
+              />
             </div>
           </div>
         )}

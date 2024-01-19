@@ -56,13 +56,13 @@ export function Banner() {
                   </div>
                 </div>
 
-                <div className="inline-flex justify-center overflow-hidden relative h-[500px] w-full lg:justify-end">
+                <div className="inline-flex justify-center overflow-hidden h-[500px] w-full lg:justify-end">
                   <Img
-                    width={0}
-                    height={0}
+                    width={1032}
+                    height={500}
                     src={img}
                     alt="Banner de apresentação"
-                    className="absolute min-w-[700px] h-[500px] border-secundary-500 border-b-[3px] lg:min-w-[1032px] "
+                    className="min-w-[700px] h-[500px] border-secundary-500 border-b-[3px] lg:min-w-[1032px] "
                   />
                 </div>
 
