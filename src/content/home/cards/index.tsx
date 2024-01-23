@@ -7,7 +7,8 @@ import { Book } from '@/components/icons/book';
 import { Strategy } from '@/components/icons/strategy';
 import { World } from '@/components/icons/world';
 import { Slide } from '@/components/Slide';
-import { NavigationSlide } from '@/components/Slide/navigationSlide';
+import { NavigationNext } from '@/components/Slide/navigationNext';
+import { NavigationPrev } from '@/components/Slide/navigationPrev';
 import { PaginationSlide } from '@/components/Slide/paginationSlide';
 import Swiper from 'swiper';
 import { A11y, Pagination, Scrollbar } from 'swiper/modules';
@@ -33,7 +34,7 @@ export function Cards() {
     if (!bulletRef.current) return;
 
     const bullets = bulletRef.current.querySelectorAll(
-      '.swiper-pagination-bullet'
+      '.swiper-pagination-bullet',
     );
     if (!bullets) return;
 
@@ -70,56 +71,50 @@ export function Cards() {
       >
         <SwiperSlide>
           <Card
-            src="/assets/cards-4.jpg"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
+            src='/assets/cards-4.jpg'
+            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim'
             Icon={Book}
-            title="Nossas unidades de negocio"
+            title='Nossas unidades de negocio'
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <Card
-            src="/assets/cards.jpg"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
+            src='/assets/cards.jpg'
+            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim'
             Icon={Strategy}
-            title="Nossa estratégia"
+            title='Nossa estratégia'
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <Card
-            src="/assets/cards-3.jpg"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
+            src='/assets/cards-3.jpg'
+            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim'
             Icon={World}
-            title="Nosso impacto (ESG)"
+            title='Nosso impacto (ESG)'
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <Card
-            src="/assets/cards-2.jpg"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
+            src='/assets/cards-2.jpg'
+            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim'
             Icon={AboutUs}
-            title="Quem Somos"
+            title='Quem Somos'
           />
         </SwiperSlide>
 
         {!isLastSlide && (
           <div
-            className="flex justify-center items-center relative p-4"
+            className='flex gap-8 p-2 justify-center items-center'
             ref={bulletRef}
           >
-            <NavigationSlide
-              swiper={swiper}
-              className=" border-black justify-around w-full"
-            />
+            <NavigationPrev swiper={swiper} />
 
-            <div className="absolute flex justify-center">
-              <PaginationSlide
-                classNameContainer="!static max-w-[80px] m-auto"
-                className="mb-0"
-              />
-            </div>
+            <PaginationSlide />
+
+            <NavigationNext swiper={swiper} />
           </div>
         )}
       </Slide>
