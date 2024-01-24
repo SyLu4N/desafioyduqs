@@ -7,7 +7,6 @@ import { NavigationNext } from '@/components/Slide/navigationNext';
 import { NavigationPrev } from '@/components/Slide/navigationPrev';
 import { PaginationSlide } from '@/components/Slide/paginationSlide';
 import { Textura } from '@/components/textura';
-import Img from 'next/image';
 import { A11y, Pagination, Scrollbar } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 
@@ -57,7 +56,7 @@ export function Banner() {
                   </div>
                 </div>
 
-                <div className='flex justify-center items-center relative w-full min-h-[440px] max-h-[500px] border-secundary-500 border-b-[3px] max-w-[1032px] overflow-hidden lg:justify-end'>
+                <div className='flex justify-center items-center relative w-full min-h-[440px] max-h-[500px] border-secondary-500 border-b-[3px] max-w-[1032px] overflow-hidden lg:justify-end'>
                   <img
                     src={img}
                     alt='Banner de apresentação'

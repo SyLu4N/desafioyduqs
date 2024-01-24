@@ -19,9 +19,9 @@ const config: Config = {
         'primary-500': '#12284c',
         'primary-600': '#0C1B33',
 
-        'secundary-400': '#66e0ff',
-        'secundary-500': '#00ADBB',
-        'secundary-600': '#00718f',
+        'secondary-400': '#66e0ff',
+        'secondary-500': '#00ADBB',
+        'secondary-600': '#00718f',
 
         'letter-400': '#4cd2ff',
         'letter-500': '#009ABF',

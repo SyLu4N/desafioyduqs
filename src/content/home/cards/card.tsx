@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from 'react';
 
 import { ArrowMore } from '@/components/icons/arrow-more';
+import Link from 'next/link';
 
 interface CardProps {
   src: string;
@@ -46,7 +47,7 @@ export function Card({ Icon, src, text, title }: CardProps) {
       />
 
       <div className='relative z-[2] py-12 pt-[64px] px-8 w-full text-white flex flex-col justify-between'>
-        <Icon className={isVisible ? 'text-secundary-500' : 'text-white'} />
+        <Icon className={isVisible ? 'text-secondary-500' : 'text-white'} />
 
         <p
           className={`
@@ -73,14 +74,15 @@ export function Card({ Icon, src, text, title }: CardProps) {
           </div>
         </div>
 
-        <p
+        <Link
+          href=''
           className={`
               ${isVisible ? 'flex' : 'hidden'}
-              items-center underline gap-2 text-[16px] font-light
+              items-center underline gap-2 text-[16px] font-light cursor-pointer
             `}
         >
           Saiba mais <ArrowMore className='size-5' />
-        </p>
+        </Link>
       </div>
     </div>
   );
