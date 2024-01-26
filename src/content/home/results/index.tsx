@@ -1,7 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-
+import { FakeApiResults } from '@/@Types/fakeApiResults';
 import { CallResults } from '@/components/icons/results/callResults';
 import { Itr } from '@/components/icons/results/itr';
 import { Mockup } from '@/components/icons/results/mockup';
@@ -10,61 +9,66 @@ import { SpreadSheet } from '@/components/icons/results/spreadsheet';
 import { Slide } from '@/components/Slide';
 import { NavigationNext } from '@/components/Slide/navigationNext';
 import { NavigationPrev } from '@/components/Slide/navigationPrev';
-import { A11y, Pagination, Scrollbar } from 'swiper/modules';
+import { A11y, Navigation, Scrollbar } from 'swiper/modules';
+import { SwiperSlide } from 'swiper/react';
+
+import { Result } from './result';
+
+const fakeAPI: FakeApiResults[] = [
+  {
+    id: 1,
+    timestre: '1',
+    ano: '2021',
+    IR: true,
+    AR: true,
+    RR: true,
+    PA: true,
+    CR: true,
+  },
+
+  {
+    id: 2,
+    timestre: '2',
+    ano: '2021',
+    IR: true,
+    AR: true,
+    RR: true,
+    PA: false,
+    CR: true,
+  },
+
+  {
+    id: 3,
+    timestre: '3',
+    ano: '2021',
+    IR: true,
+    AR: true,
+    RR: false,
+    PA: true,
+    CR: false,
+  },
+];
 
 export function Results() {
-  const [swiper, setSwiper] = useState<any>(null);
-
   return (
-    <div>
+    <div className='max-w-[500px]'>
       <h1>Central de Resultados</h1>
 
       <Slide
-        pagination={{
-          clickable: true,
-          el: '.swiper-pagination',
+        modules={[A11y, Scrollbar, Navigation]}
+        navigation={{
+          prevEl: '.navigation-prev-results',
+          nextEl: '.navigation-next-results',
         }}
-        modules={[A11y, Scrollbar, Pagination]}
         spaceBetween={20}
         slidesPerView={1}
-        onSwiper={(swiper) => setSwiper(swiper)}
+        style={{ flex: 1, width: '100%' }}
       >
-        <div className='flex gap-5 items-center justify-center'>
-          <NavigationPrev swiper={swiper} icon='text-primary-500 !size-4' />
-
-          <h2 className='font-extrabold text-[22px]'>
-            1T<span className='font-normal'>21</span>
-          </h2>
-
-          <NavigationNext swiper={swiper} icon='text-primary-500 !size-4' />
-        </div>
-
-        <div className='grid grid-cols-3 grid-flow-row gap-[30px] justify-center items-center'>
-          <div className='flex flex-col items-center'>
-            <Itr className='text-secondary-500' />
-            <p>ITR</p>
-          </div>
-
-          <div className='flex flex-col items-center'>
-            <Mockup className='text-secondary-500' />
-            <p>Apresentação de Resultados</p>
-          </div>
-
-          <div className='flex flex-col items-center'>
-            <ReleaseDoc className='text-secondary-500' />
-            <p>Release de Resultados</p>
-          </div>
-
-          <div className='flex flex-col items-center'>
-            <SpreadSheet className='text-secondary-500' />
-            <p>Planilha de Apoio</p>
-          </div>
-
-          <div className='flex flex-col items-center'>
-            <CallResults className='text-secondary-500' />
-            <p>Call de Resultados</p>
-          </div>
-        </div>
+        {fakeAPI.map((data) => (
+          <SwiperSlide key={data.id}>
+            <Result data={data} />
+          </SwiperSlide>
+        ))}
       </Slide>
     </div>
   );

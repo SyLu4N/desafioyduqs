@@ -10,7 +10,7 @@ export function Home() {
       <Shortcut />
       <Cards />
 
-      <div className='flex gap-4 p-[75px] border border-black'>
+      <div className='flex'>
         <Results />
       </div>
     </main>

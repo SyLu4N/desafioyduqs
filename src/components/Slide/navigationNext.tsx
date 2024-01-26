@@ -1,22 +1,19 @@
-import SwiperProps from 'swiper';
-
 import { Arrow } from '../icons/arrow';
 
 interface NavigationNextProps {
-  swiper: SwiperProps;
   className?: string;
   icon?: string;
+  id?: string;
 }
 
 export function NavigationNext({
-  swiper,
+  id = 'navigation-next',
   className = 'text-secondary-500',
   icon = '',
 }: NavigationNextProps) {
   return (
     <div
-      className={`transition cursor-pointer hover:brightness-125 ${className}`}
-      onClick={() => swiper?.slideNext()}
+      className={`${id} transition cursor-pointer hover:brightness-125 ${className}`}
     >
       <Arrow className={`rotate-180 size-6  ${icon}`} />
     </div>

@@ -1,26 +1,19 @@
-import SwiperProps from 'swiper';
-
 import { Arrow } from '../icons/arrow';
 
 interface NavigationPrevProps {
   className?: string;
-  swiper: SwiperProps;
   icon?: string;
+  id?: string;
 }
 
 export function NavigationPrev({
-  swiper,
+  id = 'navigation-prev',
   icon = 'text-secondary-500',
   className = '',
 }: NavigationPrevProps) {
-  const isBeginning = swiper?.isBeginning || false;
-  console.log(isBeginning);
-
   return (
     <div
-      className={`transition cursor-pointer ${className}
-      ${isBeginning ? 'opacity-50' : 'opacity-100 hover:brightness-125'}`}
-      onClick={() => swiper?.slidePrev()}
+      className={`${id} hover:brightness-125 transition cursor-pointer ${className}`}
     >
       <Arrow className={`size-6 ${icon}`} />
     </div>

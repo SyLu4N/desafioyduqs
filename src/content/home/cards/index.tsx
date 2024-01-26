@@ -11,7 +11,7 @@ import { NavigationNext } from '@/components/Slide/navigationNext';
 import { NavigationPrev } from '@/components/Slide/navigationPrev';
 import { PaginationSlide } from '@/components/Slide/paginationSlide';
 import Swiper from 'swiper';
-import { A11y, Pagination, Scrollbar } from 'swiper/modules';
+import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 
 import { Card } from './card';
@@ -50,22 +50,21 @@ export function Cards() {
   return (
     <>
       <Slide
+        modules={[A11y, Scrollbar, Pagination, Navigation]}
         pagination={{ clickable: true, el: '.swiper-pagination' }}
-        modules={[A11y, Scrollbar, Pagination]}
+        navigation={{
+          prevEl: '.navigation-prev-cards',
+          nextEl: '.navigation-next-cards',
+        }}
         onSwiper={(swiper) => setSwiper(swiper)}
         onResize={verifySwiper}
         slidesPerView={1.1}
         breakpoints={{
           450: { slidesPerView: 1.5 },
-
-          600: { slidesPerView: 2 },
-
-          820: { slidesPerView: 2 },
-
-          950: { slidesPerView: 2 },
-
-          1220: { slidesPerView: 2 },
-
+          600: { slidesPerView: 2, slidesPerGroup: 2 },
+          820: { slidesPerView: 2.5 },
+          950: { slidesPerView: 3 },
+          1220: { slidesPerView: 3.5 },
           1440: { slidesPerView: 4 },
         }}
       >
@@ -110,11 +109,11 @@ export function Cards() {
             className='flex gap-8 p-2 justify-center items-center'
             ref={bulletRef}
           >
-            <NavigationPrev swiper={swiper} />
+            <NavigationPrev id='navigation-prev-cards' />
 
             <PaginationSlide />
 
-            <NavigationNext swiper={swiper} />
+            <NavigationNext id='navigation-next-cards' />
           </div>
         )}
       </Slide>

@@ -1,13 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-
 import { Slide } from '@/components/Slide';
 import { NavigationNext } from '@/components/Slide/navigationNext';
 import { NavigationPrev } from '@/components/Slide/navigationPrev';
 import { PaginationSlide } from '@/components/Slide/paginationSlide';
 import { Textura } from '@/components/textura';
-import { A11y, Pagination, Scrollbar } from 'swiper/modules';
+import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 
 const imgs = [
@@ -17,8 +15,6 @@ const imgs = [
 ];
 
 export function Banner() {
-  const [swiper, setSwiper] = useState<any>(null);
-
   return (
     <section className='bg-primary-500 overflow-hidden lg:pl-[75px] lg:pt-[24px]'>
       <div className='m-auto max-w-[1032px] lg:min-w-[1365px] relative'>
@@ -27,10 +23,13 @@ export function Banner() {
             clickable: true,
             el: '.swiper-pagination',
           }}
-          modules={[A11y, Scrollbar, Pagination]}
+          navigation={{
+            prevEl: '.navigation-prev',
+            nextEl: '.navigation-next',
+          }}
+          modules={[A11y, Scrollbar, Pagination, Navigation]}
           spaceBetween={20}
           slidesPerView={1}
-          onSwiper={(swiper) => setSwiper(swiper)}
         >
           {imgs?.map((img: string, index) => (
             <SwiperSlide key={img + index}>
@@ -50,8 +49,8 @@ export function Banner() {
                     </button>
 
                     <div className='hidden gap-5 lg:flex'>
-                      <NavigationPrev swiper={swiper} />
-                      <NavigationNext swiper={swiper} />
+                      <NavigationPrev />
+                      <NavigationNext />
                     </div>
                   </div>
                 </div>

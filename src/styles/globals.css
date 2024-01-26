@@ -58,6 +58,11 @@ h1 {
   }
 }
 
+.swiper-button-disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
 .swiper-pagination-bullet {
   position: relative;
   z-index: 99;
