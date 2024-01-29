@@ -20,7 +20,7 @@ export function Shortcut() {
           >
             <div className='h-[50px] w-[50px] flex items-center justify-center mb-2'>
               <Img
-                src={`/icons/${shortcut.icon}`}
+                src={`/icons/shortcut/${shortcut.icon}`}
                 width='0'
                 height='0'
                 sizes='100vw'

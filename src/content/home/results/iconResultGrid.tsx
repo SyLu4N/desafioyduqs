@@ -14,29 +14,28 @@ export function IconResultGrid({
   data,
   name,
 }: IconResultGridProps) {
+  const url = encodeURIComponent(name).toLocaleLowerCase();
+
   if (!available) {
     return (
       <abbr
         title='Indisponível no momento'
-        className='no-underline cursor-default'
+        className='no-underline cursor-default flex flex-col items-center text-gray-300 w-[164px] lg:w-[183px]'
       >
-        <div className='flex flex-col items-center text-gray-300'>
-          <Icon className='' />
-          <p>{name}</p>
-        </div>
+        <Icon />
+        <p>{name}</p>
       </abbr>
     );
   }
 
   return (
     <Link
-      href={`/detalhes/${name}?timestre=${data.timestre}&ano=${data.ano}`}
+      href={`/detalhes/${url}?timestre=${data.timestre}&ano=${data.ano}`}
       aria-label={`Ir para ${name} do Timestre ${data.timestre} do ano de ${data.ano}`}
+      className='w-[164px] text-secondary-500 flex flex-col items-start lg:items-center lg:w-[183px]'
     >
-      <div className='flex flex-col items-center'>
-        <Icon className='text-secondary-500' />
-        <p>{name}</p>
-      </div>
+      <Icon />
+      <p className='text-primary-500 text-start lg:text-center'>{name}</p>
     </Link>
   );
 }

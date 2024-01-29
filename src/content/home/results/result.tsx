@@ -15,8 +15,8 @@ interface ResultProps {
 
 export function Result({ data }: ResultProps) {
   return (
-    <>
-      <div className='flex gap-5 items-center justify-center'>
+    <div className='flex flex-col gap-4 lg:gap-8'>
+      <div className='flex gap-5 items-center lg:justify-center'>
         <NavigationPrev
           id='navigation-prev-results'
           icon='text-primary-500 !size-4'
@@ -33,7 +33,7 @@ export function Result({ data }: ResultProps) {
         />
       </div>
 
-      <div className='grid grid-cols-3 grid-flow-row gap-[30px] justify-center items-center text-center'>
+      <div className='grid grid-flow-row grid-cols-2 gap-[16px] items-center text-center sm:grid-cols-3'>
         <IconResultGrid Icon={Itr} data={data} name='ITR' available={data.IR} />
 
         <IconResultGrid
@@ -64,6 +64,6 @@ export function Result({ data }: ResultProps) {
           available={data.CR}
         />
       </div>
-    </>
+    </div>
   );
 }

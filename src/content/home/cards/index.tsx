@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import { AboutUs } from '@/components/icons/about-us';
-import { Book } from '@/components/icons/book';
-import { Strategy } from '@/components/icons/strategy';
-import { World } from '@/components/icons/world';
+import { AboutUs } from '@/components/icons/cards/about-us';
+import { Book } from '@/components/icons/cards/book';
+import { Strategy } from '@/components/icons/cards/strategy';
+import { World } from '@/components/icons/cards/world';
 import { Slide } from '@/components/Slide';
 import { NavigationNext } from '@/components/Slide/navigationNext';
 import { NavigationPrev } from '@/components/Slide/navigationPrev';
@@ -106,7 +106,7 @@ export function Cards() {
 
         {!isLastSlide && (
           <div
-            className='flex gap-8 p-2 justify-center items-center'
+            className='flex gap-8 p-2 justify-center items-center py-4'
             ref={bulletRef}
           >
             <NavigationPrev id='navigation-prev-cards' />
