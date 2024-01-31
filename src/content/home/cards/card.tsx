@@ -30,29 +30,29 @@ export function Card({ Icon, src, text, title }: CardProps) {
 
   return (
     <div
-      className='relative flex justify-center h-[450px] overflow-hidden'
+      className="relative flex h-[450px] justify-center overflow-hidden"
       onMouseOver={() => setIsVisible(true)}
       onMouseOut={() => setIsVisible(false)}
     >
       <img
         src={src}
         alt={`Card ${title}`}
-        className='absolute object-cover w-full h-full'
+        className="absolute h-full w-full object-cover"
       />
       <div
         className={`
-          absolute transition duration-500 w-full h-full bg-primary-500
+          absolute h-full w-full bg-primary-500 transition duration-500
           ${isVisible ? 'opacity-80' : 'opacity-30'}
         `}
       />
 
-      <div className='relative z-[2] py-12 pt-[64px] px-8 w-full text-white flex flex-col justify-between'>
+      <div className="relative z-[2] flex w-full flex-col justify-between px-8 py-12 pt-[64px] text-white">
         <Icon className={isVisible ? 'text-secondary-500' : 'text-white'} />
 
         <p
           className={`
-                transition-all duration-500 text-white text-[26px] font-normal absolute
-                ${isVisible ? '!font-bold bottom-[57%]' : 'bottom-[9%]'}
+                absolute text-[26px] font-normal text-white transition-all duration-500
+                ${isVisible ? 'bottom-[57%] !font-bold' : 'bottom-[9%]'}
               `}
         >
           {newTitle.map((party, index) => (
@@ -63,10 +63,10 @@ export function Card({ Icon, src, text, title }: CardProps) {
           ))}
         </p>
 
-        <div className='flex flex-col justify-between relative'>
-          <div className='flex flex-col gap-4 transition-all duration-500 relative'>
+        <div className="relative flex flex-col justify-between">
+          <div className="relative flex flex-col gap-4 transition-all duration-500">
             <p
-              className={`text-[21px] mt-1 font-light
+              className={`mt-1 text-[21px] font-light
               ${isVisible ? 'block' : 'hidden'}`}
             >
               {text}
@@ -75,13 +75,13 @@ export function Card({ Icon, src, text, title }: CardProps) {
         </div>
 
         <Link
-          href=''
+          href=""
           className={`
               ${isVisible ? 'flex' : 'hidden'}
-              items-center underline gap-2 text-[16px] font-light cursor-pointer
+              cursor-pointer items-center gap-2 text-[16px] font-light underline
             `}
         >
-          Saiba mais <ArrowMore className='size-5' />
+          Saiba mais <ArrowMore className="size-5" />
         </Link>
       </div>
     </div>

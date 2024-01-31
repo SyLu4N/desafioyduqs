@@ -5,7 +5,7 @@ interface PaginationSlideProps {
 export function PaginationSlide({ className = '' }: PaginationSlideProps) {
   return (
     <div
-      className={`swiper-pagination flex justify-center gap-[7px] swiper-block ${className}`}
+      className={`swiper-pagination swiper-block flex justify-center gap-[7px] ${className}`}
     />
   );
 }

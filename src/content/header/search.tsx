@@ -11,25 +11,25 @@ import { Search as SearchIcon } from '../../components/icons/header/search';
 export function Search() {
   return (
     <Sheet>
-      <SheetTrigger className='text-white hover:text-gray-200'>
+      <SheetTrigger className="text-white hover:text-gray-200">
         <SearchIcon />
       </SheetTrigger>
 
-      <SheetContent className='px-[75px] py-8' side='top'>
-        <form className='flex justify-between relative'>
+      <SheetContent className="px-[75px] py-8" side="top">
+        <form className="relative flex justify-between">
           <input
-            placeholder='Digite aqui oque você procura'
-            className='font-bold w-full text-[19px] placeholder:text-primary-500 focus:border-0 outline-none'
+            placeholder="Digite aqui oque você procura"
+            className="w-full text-[19px] font-bold outline-none placeholder:text-primary-500 focus:border-0"
           />
 
           <SheetClose>
-            <Close className='text-secondary-500 hover:text-secondary-400 transition' />
+            <Close className="text-secondary-500 transition hover:text-secondary-400" />
           </SheetClose>
 
-          <div className='absolute bottom-[-6px] w-full border-b-[1px] border-primary-400 opacity-30' />
+          <div className="absolute bottom-[-6px] w-full border-b-[1px] border-primary-400 opacity-30" />
         </form>
 
-        <p className='text-primary-500 text-[12px] mt-3'>
+        <p className="mt-3 text-[12px] text-primary-500">
           Aperte Enter para pesquisar
         </p>
       </SheetContent>

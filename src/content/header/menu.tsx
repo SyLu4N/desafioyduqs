@@ -10,7 +10,7 @@ export function Menu() {
   return (
     <>
       <MenuBurger
-        className='text-letter-500 cursor-pointer transition-all hover:text-letter-400'
+        className="cursor-pointer text-letter-500 transition-all hover:text-letter-400"
         onClick={() => setIsOpen(true)}
       />
 

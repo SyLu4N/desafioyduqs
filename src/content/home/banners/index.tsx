@@ -27,8 +27,8 @@ const fakeAPIBanners = [
 
 export function Banners() {
   return (
-    <section className='bg-primary-500 overflow-hidden lg:pl-[75px] lg:pt-[24px]'>
-      <div className='m-auto max-w-[1032px] lg:min-w-[1365px] relative'>
+    <section className="overflow-hidden bg-primary-500 lg:pl-[75px] lg:pt-[24px]">
+      <div className="relative m-auto max-w-[1032px] lg:min-w-[1365px]">
         <Slide
           pagination={{
             clickable: true,
@@ -48,8 +48,8 @@ export function Banners() {
             </SwiperSlide>
           ))}
 
-          <div className='absolute w-full bottom-[8%] lg:right-[5%] lg:top-[50%] lg:w-auto lg:bottom-auto'>
-            <PaginationSlide className='lg:flex-col' />
+          <div className="absolute bottom-[8%] w-full lg:bottom-auto lg:right-[5%] lg:top-[50%] lg:w-auto">
+            <PaginationSlide className="lg:flex-col" />
           </div>
         </Slide>
       </div>

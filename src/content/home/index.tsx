@@ -13,11 +13,11 @@ export function Home() {
       <Shortcut />
       <Cards />
 
-      <div className='relative h-[82px]'>
+      <div className="relative h-[82px]">
         <Textura />
       </div>
 
-      <div className='flex px-[16px] gap-16 flex-col lg:flex-row sm:px-[75px] mb-16'>
+      <div className="mb-16 flex flex-col gap-16 px-[16px] sm:px-[75px] lg:flex-row">
         <Results />
         <Calendar />
       </div>

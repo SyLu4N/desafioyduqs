@@ -45,10 +45,10 @@ const fakeAPI: FakeApiResults[] = [
 
 export function Results() {
   return (
-    <div className='flex flex-col gap-4 lg:gap-8 lg:pr-[42px] w-full overflow-hidden'>
-      <h2 className='text-[29px] lg:text-[40px]'>Central de Resultados</h2>
+    <div className="flex w-full flex-col gap-4 overflow-hidden lg:gap-8 lg:pr-[42px]">
+      <h2 className="text-[29px] lg:text-[40px]">Central de Resultados</h2>
 
-      <div className='w-full'>
+      <div className="w-full">
         <Slide
           modules={[A11y, Scrollbar, Navigation]}
           navigation={{
@@ -68,9 +68,9 @@ export function Results() {
 
       <div>
         <Link
-          href=''
-          className='underline text-primary-500'
-          aria-label='Ver todos resultados'
+          href=""
+          className="text-primary-500 underline"
+          aria-label="Ver todos resultados"
         >
           Ver todos os resultados
         </Link>

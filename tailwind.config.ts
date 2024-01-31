@@ -81,15 +81,29 @@ const config = {
           from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
+
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
+        },
+
+        'notifications-up': {
+          '0%': { opacity: '0', marginTop: '1rem' },
+          '100%': { opacity: '1', marginTop: '0rem' },
+        },
+
+        'notifications-down': {
+          '0%': { opacity: '1', marginTop: '0rem' },
+          '100%': { opacity: '0', marginTop: '-1.5rem' },
         },
       },
 
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+
+        'notifications-up': 'notifications-up 0.3s ease-out',
+        'notifications-down': 'notifications-down 0.3s ease-out',
       },
     },
   },

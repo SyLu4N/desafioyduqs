@@ -13,7 +13,7 @@ export function NavigationPrev({
 }: NavigationPrevProps) {
   return (
     <div
-      className={`${id} hover:brightness-125 transition cursor-pointer ${className}`}
+      className={`${id} cursor-pointer transition hover:brightness-125 ${className}`}
     >
       <Arrow className={`size-6 ${icon}`} />
     </div>

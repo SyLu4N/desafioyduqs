@@ -15,52 +15,52 @@ interface ResultProps {
 
 export function Result({ data }: ResultProps) {
   return (
-    <div className='flex flex-col gap-4 lg:gap-8'>
-      <div className='flex gap-5 items-center lg:justify-center'>
+    <div className="flex flex-col gap-4 lg:gap-8">
+      <div className="flex items-center gap-5 lg:justify-center">
         <NavigationPrev
-          id='navigation-prev-results'
-          icon='text-primary-500 !size-4'
+          id="navigation-prev-results"
+          icon="text-primary-500 !size-4"
         />
 
-        <h2 className='font-extrabold text-[22px]'>
+        <h2 className="text-[22px] font-extrabold">
           {data.timestre}T
-          <span className='font-normal'>{data.ano.slice(2)}</span>
+          <span className="font-normal">{data.ano.slice(2)}</span>
         </h2>
 
         <NavigationNext
-          icon='text-primary-500 !size-4'
-          id='navigation-next-results'
+          icon="text-primary-500 !size-4"
+          id="navigation-next-results"
         />
       </div>
 
-      <div className='grid grid-flow-row grid-cols-2 gap-[16px] items-center text-center sm:grid-cols-3'>
-        <IconResultGrid Icon={Itr} data={data} name='ITR' available={data.IR} />
+      <div className="grid grid-flow-row grid-cols-2 items-center gap-[16px] text-center sm:grid-cols-3">
+        <IconResultGrid Icon={Itr} data={data} name="ITR" available={data.IR} />
 
         <IconResultGrid
           Icon={Mockup}
           data={data}
-          name='Apresentação de Resultados'
+          name="Apresentação de Resultados"
           available={data.AR}
         />
 
         <IconResultGrid
           Icon={ReleaseDoc}
           data={data}
-          name='Release de Resultados'
+          name="Release de Resultados"
           available={data.RR}
         />
 
         <IconResultGrid
           Icon={SpreadSheet}
           data={data}
-          name='Planilha de Apoio'
+          name="Planilha de Apoio"
           available={data.PA}
         />
 
         <IconResultGrid
           Icon={CallResults}
           data={data}
-          name='Call de Resultados'
+          name="Call de Resultados"
           available={data.CR}
         />
       </div>

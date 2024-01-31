@@ -11,25 +11,25 @@ const shortcuts = [
 
 export function Shortcut() {
   return (
-    <div className='bg-primary-500 border-b-[3px] border-b-secondary-500'>
-      <div className='max-w-[1440px] m-auto py-[80px] px-[16px] grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] gap-[30px] justify-center items-center lg:py-[96px] lg:px-[186px] lg:grid-cols-6 lg:grid-flow-row'>
+    <div className="border-b-[3px] border-b-secondary-500 bg-primary-500">
+      <div className="m-auto grid max-w-[1440px] grid-cols-[repeat(auto-fill,minmax(140px,1fr))] items-center justify-center gap-[30px] px-[16px] py-[80px] lg:grid-flow-row lg:grid-cols-6 lg:px-[186px] lg:py-[96px]">
         {shortcuts.map((shortcut) => (
           <div
             key={shortcut.text}
-            className='m-auto bg-secondary-500 w-[140px] h-[112px] flex items-center justify-center flex-col rounded-[4px] hover:bg-secondary-400 transition cursor-pointer'
+            className="m-auto flex h-[112px] w-[140px] cursor-pointer flex-col items-center justify-center rounded-[4px] bg-secondary-500 transition hover:bg-secondary-400"
           >
-            <div className='h-[50px] w-[50px] flex items-center justify-center mb-2'>
+            <div className="mb-2 flex h-[50px] w-[50px] items-center justify-center">
               <Img
                 src={`/icons/shortcut/${shortcut.icon}`}
-                width='0'
-                height='0'
-                sizes='100vw'
-                className='w-full h-auto'
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="h-auto w-full"
                 alt={`Icone de ${shortcut.text}`}
               />
             </div>
 
-            <p className='text-[16px] text-primary-500'>{shortcut.text}</p>
+            <p className="text-[16px] text-primary-500">{shortcut.text}</p>
           </div>
         ))}
       </div>

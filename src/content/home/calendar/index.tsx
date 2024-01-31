@@ -30,8 +30,8 @@ const fakeAPIEvents = [
 
 export function Calendar() {
   return (
-    <div className='flex flex-col gap-4 lg:pr-[42px] !w-full'>
-      <h2 className='text-[29px] lg:text-[40px]'>Calendário de Eventos</h2>
+    <div className="flex !w-full flex-col gap-4 lg:pr-[42px]">
+      <h2 className="text-[29px] lg:text-[40px]">Calendário de Eventos</h2>
 
       {fakeAPIEvents.map((event, index) => (
         <Event
@@ -44,9 +44,9 @@ export function Calendar() {
 
       <div>
         <Link
-          href=''
-          className='underline text-primary-500'
-          aria-label='Ver todos eventos'
+          href=""
+          className="text-primary-500 underline"
+          aria-label="Ver todos eventos"
         >
           Ver todos os eventos
         </Link>

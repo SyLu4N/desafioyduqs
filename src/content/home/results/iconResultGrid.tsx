@@ -19,8 +19,8 @@ export function IconResultGrid({
   if (!available) {
     return (
       <abbr
-        title='Indisponível no momento'
-        className='no-underline cursor-default flex flex-col items-center text-gray-300 w-[164px] lg:w-[183px]'
+        title="Indisponível no momento"
+        className="flex w-[164px] cursor-default flex-col items-center text-gray-300 no-underline lg:w-[183px]"
       >
         <Icon />
         <p>{name}</p>
@@ -32,10 +32,10 @@ export function IconResultGrid({
     <Link
       href={`/detalhes/${url}?timestre=${data.timestre}&ano=${data.ano}`}
       aria-label={`Ir para ${name} do Timestre ${data.timestre} do ano de ${data.ano}`}
-      className='w-[164px] text-secondary-500 flex flex-col items-start lg:items-center lg:w-[183px]'
+      className="flex w-[164px] flex-col items-start text-secondary-500 lg:w-[183px] lg:items-center"
     >
       <Icon />
-      <p className='text-primary-500 text-start lg:text-center'>{name}</p>
+      <p className="text-start text-primary-500 lg:text-center">{name}</p>
     </Link>
   );
 }

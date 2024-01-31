@@ -29,27 +29,27 @@ export function Event({ event, index, className = '' }: EventProps) {
   if (index > 2) return <></>;
 
   return (
-    <article className={`${className} flex gap-2 justify-between`}>
+    <article className={`${className} flex justify-between gap-2`}>
       <div>
         <time
-          className='flex items-center gap-2 text-letter-500'
+          className="flex items-center gap-2 text-letter-500"
           dateTime={event.date.toLocaleDateString('pt-br')}
         >
           <p>{month}</p>
-          <span className='text-[12px]'>|</span>
-          <p className='font-bold'>{day}</p>
+          <span className="text-[12px]">|</span>
+          <p className="font-bold">{day}</p>
         </time>
 
         <p>{event.description}</p>
 
-        <aside className='mb-3'>
-          <span className='text-[14px] text-gray-400'>
+        <aside className="mb-3">
+          <span className="text-[14px] text-gray-400">
             {hours} - 00:00 (Horário de Brasília)
           </span>
         </aside>
       </div>
 
-      <div className='flex flex-col justify-center gap-2'>
+      <div className="flex flex-col justify-center gap-2">
         <Gmail />
         <Outlook />
       </div>

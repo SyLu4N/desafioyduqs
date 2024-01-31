@@ -70,50 +70,50 @@ export function Cards() {
       >
         <SwiperSlide>
           <Card
-            src='/assets/cards-4.jpg'
-            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim'
+            src="/assets/cards-4.jpg"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
             Icon={Book}
-            title='Nossas unidades de negocio'
+            title="Nossas unidades de negocio"
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <Card
-            src='/assets/cards.jpg'
-            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim'
+            src="/assets/cards.jpg"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
             Icon={Strategy}
-            title='Nossa estratégia'
+            title="Nossa estratégia"
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <Card
-            src='/assets/cards-3.jpg'
-            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim'
+            src="/assets/cards-3.jpg"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
             Icon={World}
-            title='Nosso impacto (ESG)'
+            title="Nosso impacto (ESG)"
           />
         </SwiperSlide>
 
         <SwiperSlide>
           <Card
-            src='/assets/cards-2.jpg'
-            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim'
+            src="/assets/cards-2.jpg"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum enim"
             Icon={AboutUs}
-            title='Quem Somos'
+            title="Quem Somos"
           />
         </SwiperSlide>
 
         {!isLastSlide && (
           <div
-            className='flex gap-8 p-2 justify-center items-center py-4'
+            className="flex items-center justify-center gap-8 p-2 py-4"
             ref={bulletRef}
           >
-            <NavigationPrev id='navigation-prev-cards' />
+            <NavigationPrev id="navigation-prev-cards" />
 
             <PaginationSlide />
 
-            <NavigationNext id='navigation-next-cards' />
+            <NavigationNext id="navigation-next-cards" />
           </div>
         )}
       </Slide>

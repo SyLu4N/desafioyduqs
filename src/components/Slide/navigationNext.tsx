@@ -13,9 +13,9 @@ export function NavigationNext({
 }: NavigationNextProps) {
   return (
     <div
-      className={`${id} transition cursor-pointer hover:brightness-125 ${className}`}
+      className={`${id} cursor-pointer transition hover:brightness-125 ${className}`}
     >
-      <Arrow className={`rotate-180 size-6  ${icon}`} />
+      <Arrow className={`size-6 rotate-180  ${icon}`} />
     </div>
   );
 }
