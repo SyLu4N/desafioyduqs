@@ -4,6 +4,7 @@ import {
   Sheet,
   SheetContent,
   SheetClose,
+  SheetOverlay,
 } from '@/components/ui/sheet';
 
 import { Search as SearchIcon } from '../../components/icons/header/search';
@@ -15,7 +16,7 @@ export function Search() {
         <SearchIcon />
       </SheetTrigger>
 
-      <SheetContent className="px-[75px] py-8" side="top">
+      <SheetContent className="px-[75px] py-8" side="top" overlay={false}>
         <form className="relative flex justify-between">
           <input
             placeholder="Digite aqui oque você procura"

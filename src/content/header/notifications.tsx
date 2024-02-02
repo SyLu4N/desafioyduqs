@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { AlertBell } from '@/components/icons/header/alertBell';
+import { ArrowNotificaiton } from '@/components/icons/header/arrowNotification';
 import { Bell } from '@/components/icons/header/bell';
 import Link from 'next/link';
 
@@ -47,7 +48,7 @@ export function Notifications() {
   return (
     <div className="relative text-white">
       <div
-        className={`flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] transition ${isOpen && 'bg-secondary-500 text-primary-500'}`}
+        className={`flex h-[24px] w-[24px] cursor-pointer items-center justify-center rounded-[2px] transition hover:text-gray-200 ${isOpen && 'bg-secondary-500 text-primary-500 hover:text-primary-600'}`}
         onClick={handleNotifications}
       >
         {newNotifications && !isOpen ? <AlertBell /> : <Bell />}
@@ -55,8 +56,9 @@ export function Notifications() {
 
       <div
         ref={animationDownRef}
-        className={`absolute right-[-100%] top-[200%] z-20 select-none whitespace-nowrap rounded-sm border bg-white p-4 shadow-xl ${isOpen ? 'animate-notifications-up' : 'hidden'}`}
+        className={`absolute right-[-100%] top-[200%] z-10 select-none whitespace-nowrap rounded-sm border bg-white p-4 shadow-xl ${isOpen ? 'animate-notifications-up' : 'hidden'}`}
       >
+        <ArrowNotificaiton className="absolute right-[8%] top-[-6.5%] mt-[12px]" />
         <div className="mb-1 flex min-w-[214px] items-center justify-between gap-3">
           <p className="font-bold text-primary-500">Ultimas atualizações</p>
 
@@ -66,7 +68,6 @@ export function Notifications() {
             </p>
           )}
         </div>
-
         {maxFourNotifications.map((notification) => (
           <div
             className="border-b-[1px] border-gray-200 pb-2 pt-3 text-black"
@@ -79,10 +80,10 @@ export function Notifications() {
             <p className="text-sm">{notification.text}</p>
           </div>
         ))}
-
         <Link href="#" className="mt-4 inline-block text-letter-500 underline">
           Ver todos
         </Link>
+        A
       </div>
     </div>
   );
