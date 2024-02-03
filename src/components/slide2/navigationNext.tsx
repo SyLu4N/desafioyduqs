@@ -1,4 +1,4 @@
-import { Arrow } from '../icons/arrow';
+import { Arrow } from '../../icons/arrow';
 
 interface NavigationNextProps {
   className?: string;

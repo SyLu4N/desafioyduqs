@@ -1,13 +1,12 @@
-import { Close } from '@/components/icons/close';
 import {
   SheetTrigger,
   Sheet,
   SheetContent,
   SheetClose,
-  SheetOverlay,
 } from '@/components/ui/sheet';
+import { Close } from '@/icons/close';
 
-import { Search as SearchIcon } from '../../components/icons/header/search';
+import { Search as SearchIcon } from '../../icons/header/search';
 
 export function Search() {
   return (

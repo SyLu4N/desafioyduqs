@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
 
-import { ArrowMore } from '@/components/icons/arrow-more';
+import { ArrowMore } from '@/icons/arrow-more';
 import Link from 'next/link';
 
 interface CardProps {

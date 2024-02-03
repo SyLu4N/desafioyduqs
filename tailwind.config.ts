@@ -96,6 +96,16 @@ const config = {
           '0%': { opacity: '1', marginTop: '0rem' },
           '100%': { opacity: '0', marginTop: '-1.5rem' },
         },
+
+        'opacity-open': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+
+        'opacity-closed': {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
       },
 
       animation: {
@@ -104,6 +114,9 @@ const config = {
 
         'notifications-up': 'notifications-up 0.3s ease-out',
         'notifications-down': 'notifications-down 0.3s ease-out',
+
+        'opacity-open': 'opacity-open 0.5s ease-out',
+        'opacity-closed': 'opacity-closed 0.5s ease-out',
       },
     },
   },

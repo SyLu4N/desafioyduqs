@@ -1,4 +1,4 @@
-import { LinkedIn } from '@/components/icons/linkedIn';
+import { LinkedIn } from '@/icons/linkedIn';
 
 export function Footer() {
   return (

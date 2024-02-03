@@ -1,11 +1,11 @@
-import { FakeApiResults } from '@/@Types/fakeApiResults';
-import { CallResults } from '@/components/icons/results/callResults';
-import { Itr } from '@/components/icons/results/itr';
-import { Mockup } from '@/components/icons/results/mockup';
-import { ReleaseDoc } from '@/components/icons/results/releaseDoc';
-import { SpreadSheet } from '@/components/icons/results/spreadsheet';
-import { NavigationNext } from '@/components/Slide/navigationNext';
-import { NavigationPrev } from '@/components/Slide/navigationPrev';
+import { FakeApiResults } from '@/@types2/fakeApiResults';
+import { NavigationNext } from '@/components/slide2/navigationNext';
+import { NavigationPrev } from '@/components/slide2/navigationPrev';
+import { CallResults } from '@/icons/results/callResults';
+import { Itr } from '@/icons/results/itr';
+import { Mockup } from '@/icons/results/mockup';
+import { ReleaseDoc } from '@/icons/results/releaseDoc';
+import { SpreadSheet } from '@/icons/results/spreadsheet';
 
 import { IconResultGrid } from './iconResultGrid';
 

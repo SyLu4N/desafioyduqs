@@ -1,7 +1,7 @@
 'use client';
 
-import { Slide } from '@/components/Slide';
-import { PaginationSlide } from '@/components/Slide/paginationSlide';
+import { Slide } from '@/components/slide2';
+import { PaginationSlide } from '@/components/slide2/paginationSlide';
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 

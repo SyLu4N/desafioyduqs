@@ -1,5 +1,5 @@
-import { Gmail } from '@/components/icons/gmail';
-import { Outlook } from '@/components/icons/outlook';
+import { Gmail } from '@/icons/gmail';
+import { Outlook } from '@/icons/outlook';
 
 interface EventProps {
   event: {

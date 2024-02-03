@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import { AboutUs } from '@/components/icons/cards/about-us';
-import { Book } from '@/components/icons/cards/book';
-import { Strategy } from '@/components/icons/cards/strategy';
-import { World } from '@/components/icons/cards/world';
-import { Slide } from '@/components/Slide';
-import { NavigationNext } from '@/components/Slide/navigationNext';
-import { NavigationPrev } from '@/components/Slide/navigationPrev';
-import { PaginationSlide } from '@/components/Slide/paginationSlide';
+import { Slide } from '@/components/slide2';
+import { NavigationNext } from '@/components/slide2/navigationNext';
+import { NavigationPrev } from '@/components/slide2/navigationPrev';
+import { PaginationSlide } from '@/components/slide2/paginationSlide';
+import { AboutUs } from '@/icons/cards/about-us';
+import { Book } from '@/icons/cards/book';
+import { Strategy } from '@/icons/cards/strategy';
+import { World } from '@/icons/cards/world';
 import Swiper from 'swiper';
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';

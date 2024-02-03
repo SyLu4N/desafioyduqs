@@ -1,7 +1,7 @@
 'use client';
 
-import { FakeApiResults } from '@/@Types/fakeApiResults';
-import { Slide } from '@/components/Slide';
+import { FakeApiResults } from '@/@types2/fakeApiResults';
+import { Slide } from '@/components/slide2';
 import Link from 'next/link';
 import { A11y, Navigation, Scrollbar } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
