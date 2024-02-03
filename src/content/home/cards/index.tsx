@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { Slide } from '@/components/slide';
 import { NavigationNext } from '@/components/slide/navigationNext';
@@ -17,35 +17,15 @@ import { SwiperSlide } from 'swiper/react';
 import { Card } from './card';
 
 export function Cards() {
-  const [swiper, setSwiper] = useState<any>(null);
   const [isLastSlide, setIsLastSlide] = useState(false);
 
-  function verifySwiper(mySwiper: Swiper) {
-    if (!mySwiper) return;
+  function verifySwiper(swiper: Swiper) {
+    if (!swiper) return;
 
-    if (mySwiper.isEnd && mySwiper.isBeginning) return setIsLastSlide(true);
+    if (swiper.isEnd && swiper.isBeginning) return setIsLastSlide(true);
 
     return setIsLastSlide(false);
   }
-
-  const bulletRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!bulletRef.current) return;
-
-    const bullets = bulletRef.current.querySelectorAll(
-      '.swiper-pagination-bullet',
-    );
-    if (!bullets) return;
-
-    bullets.forEach((bullet) => {
-      bullet?.classList?.add('!bg-primary-500', 'before:border-primary-500');
-    });
-  }, []);
-
-  useEffect(() => {
-    verifySwiper(swiper);
-  }, [swiper]);
 
   return (
     <>
@@ -56,7 +36,6 @@ export function Cards() {
           prevEl: '.navigation-prev-cards',
           nextEl: '.navigation-next-cards',
         }}
-        onSwiper={(swiper) => setSwiper(swiper)}
         onResize={verifySwiper}
         slidesPerView={1.1}
         breakpoints={{
@@ -105,13 +84,10 @@ export function Cards() {
         </SwiperSlide>
 
         {!isLastSlide && (
-          <div
-            className="flex items-center justify-center gap-8 p-2 py-4"
-            ref={bulletRef}
-          >
+          <div className="flex items-center justify-center gap-8 p-2 py-4">
             <NavigationPrev id="navigation-prev-cards" />
 
-            <PaginationSlide />
+            <PaginationSlide className="text-primary-500" />
 
             <NavigationNext id="navigation-next-cards" />
           </div>

@@ -2,8 +2,8 @@ import { LinkedIn } from '@/icons/linkedIn';
 
 export function Footer() {
   return (
-    <div className="relative flex flex-col items-center gap-2 bg-primary-600 py-4 font-light text-white md:block md:text-center lg:flex lg:flex-row lg:justify-around">
-      <p className="font-bold text-letter-500">Copyright 2021 YDUQS</p>
+    <footer className="relative flex flex-col items-center gap-2 bg-primary-600 py-4 font-light text-white md:block md:text-center lg:flex lg:flex-row lg:justify-around">
+      <p className="font-bold text-letter-500">Copyright 2021 EMPRESA</p>
 
       <a href="#">
         Termo de Privacidade <span className="mx-2 text-[20px]">|</span> Termos
@@ -34,6 +34,6 @@ export function Footer() {
           SyLu4N
         </a>
       </p>
-    </div>
+    </footer>
   );
 }

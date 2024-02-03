@@ -48,7 +48,7 @@ export function Banners() {
             </SwiperSlide>
           ))}
 
-          <div className="absolute bottom-[8%] w-full lg:bottom-auto lg:right-[5%] lg:top-[50%] lg:w-auto">
+          <div className="absolute bottom-[8%] w-full text-white lg:bottom-auto lg:right-[5%] lg:top-[47%] lg:w-auto">
             <PaginationSlide className="lg:flex-col" />
           </div>
         </Slide>

@@ -20,7 +20,7 @@ export function IconResultGrid({
     return (
       <abbr
         title="Indisponível no momento"
-        className="flex w-[164px] cursor-default flex-col items-center text-gray-300 no-underline lg:w-[183px]"
+        className="flex w-[164px] cursor-default flex-col items-start text-gray-300 no-underline  lg:w-[183px] lg:items-center"
       >
         <Icon />
         <p>{name}</p>

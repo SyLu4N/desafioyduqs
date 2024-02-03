@@ -1,5 +1,7 @@
 'use client';
 
+import { Accordion } from '@/components/ui/accordion';
+import { Input } from '@/components/ui/input';
 import {
   SheetTrigger,
   SheetContent,
@@ -8,9 +10,12 @@ import {
   SheetHeader,
 } from '@/components/ui/sheet';
 import { Close } from '@/icons/close';
+import { EUA } from '@/icons/header/EUA';
 import { MenuBurger } from '@/icons/header/menuBurger';
+import { Search } from '@/icons/search';
 import Image from 'next/image';
 
+import { Resume } from '../resume';
 import { LinkNav } from './linkNav';
 import { Nav } from './nav';
 
@@ -22,10 +27,10 @@ export function Menu() {
       </SheetTrigger>
 
       <SheetContent
-        className="bg-primary-500/95 px-[75px] py-6 shadow-transparent"
+        className="bg-transparent px-[10px] py-6 shadow-transparent sm:px-[75px]"
         side="top-opacity"
         animate="opacity"
-        classNameOverlay="h-screen bg-primary-500/95"
+        classNameOverlay="h-screen bg-primary-500 lg:bg-primary-500/95"
       >
         <SheetHeader className="flex flex-row items-center justify-between border-b-[1px] pb-2">
           <Image
@@ -40,8 +45,31 @@ export function Menu() {
           </SheetClose>
         </SheetHeader>
 
-        <div className="mt-14 flex justify-around gap-7 text-white">
-          <Nav title="A YDUQS">
+        <div className="space-y-4 lg:hidden">
+          <div className="mt-8 flex flex-col items-end justify-between gap-4 sm:flex-row">
+            <Resume />
+
+            <div className="flex items-center gap-2 text-white">
+              <p className="text-[14px] font-light">English</p>
+              <EUA />
+            </div>
+          </div>
+
+          <div className="relative text-white">
+            <Input
+              className="bg-transparent pl-8 pt-1 placeholder:text-white/90 focus:border-[2px]"
+              placeholder="Pesquisar"
+            />
+
+            <Search className="absolute left-2 top-[8px] w-[17px] " />
+          </div>
+        </div>
+
+        <Accordion
+          type="single"
+          className="mt-8 flex flex-col items-end justify-around bg-transparent text-end text-white lg:mt-14 lg:flex-row lg:items-start lg:gap-7 lg:text-start"
+        >
+          <Nav title="A EMPRESA">
             <LinkNav text="Quem somos" url="#" />
             <LinkNav text="Nossa História" url="#" />
             <LinkNav text="Unidades de Negócio" url="#" />
@@ -54,7 +82,7 @@ export function Menu() {
           <Nav title="ESG">
             <LinkNav text="Estratégia e compromissos" url="#" />
             <LinkNav text="Relatórios de Sustentabilidade" url="#" />
-            <LinkNav text="Instituto YDUQS" url="#" />
+            <LinkNav text="Instituto EMPRESA" url="#" />
           </Nav>
 
           <Nav title="Governança Corporativa">
@@ -81,7 +109,7 @@ export function Menu() {
             <LinkNav text="Dividendos" url="#" />
             <LinkNav text="Dívida e Rating" url="#" />
             <LinkNav text="Demais publicações CVM" url="#" />
-            <LinkNav text="YDUQS Day" url="#" />
+            <LinkNav text="EMPRESA Day" url="#" />
           </Nav>
 
           <Nav title="Contato">
@@ -89,7 +117,7 @@ export function Menu() {
             <LinkNav text="Fale conosco" url="#" />
             <LinkNav text="Trabalhe conosco" url="#" />
           </Nav>
-        </div>
+        </Accordion>
       </SheetContent>
     </Sheet>
   );
