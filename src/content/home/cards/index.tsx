@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
 import { Slide } from '@/components/slide';
 import { NavigationNext } from '@/components/slide/navigationNext';
 import { NavigationPrev } from '@/components/slide/navigationPrev';
@@ -10,23 +8,12 @@ import { AboutUs } from '@/icons/cards/about-us';
 import { Book } from '@/icons/cards/book';
 import { Strategy } from '@/icons/cards/strategy';
 import { World } from '@/icons/cards/world';
-import Swiper from 'swiper';
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 
 import { Card } from './card';
 
 export function Cards() {
-  const [isLastSlide, setIsLastSlide] = useState(false);
-
-  function verifySwiper(swiper: Swiper) {
-    if (!swiper) return;
-
-    if (swiper.isEnd && swiper.isBeginning) return setIsLastSlide(true);
-
-    return setIsLastSlide(false);
-  }
-
   return (
     <>
       <Slide
@@ -36,7 +23,6 @@ export function Cards() {
           prevEl: '.navigation-prev-cards',
           nextEl: '.navigation-next-cards',
         }}
-        onResize={verifySwiper}
         slidesPerView={1.1}
         breakpoints={{
           450: { slidesPerView: 1.5 },
@@ -83,15 +69,13 @@ export function Cards() {
           />
         </SwiperSlide>
 
-        {!isLastSlide && (
-          <div className="flex items-center justify-center gap-8 p-2 py-4">
-            <NavigationPrev id="navigation-prev-cards" />
+        <div className="flex items-center justify-center gap-8 p-2 py-4 2xl:hidden">
+          <NavigationPrev id="navigation-prev-cards" />
 
-            <PaginationSlide className="text-primary-500" />
+          <PaginationSlide className="text-primary-500" />
 
-            <NavigationNext id="navigation-next-cards" />
-          </div>
-        )}
+          <NavigationNext id="navigation-next-cards" />
+        </div>
       </Slide>
     </>
   );
