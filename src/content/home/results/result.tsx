@@ -1,6 +1,6 @@
-import { FakeApiResults } from '@/@types2/fakeApiResults';
-import { NavigationNext } from '@/components/slide2/navigationNext';
-import { NavigationPrev } from '@/components/slide2/navigationPrev';
+import { FakeApiResults } from '@/@types/fakeApiResults';
+import { NavigationNext } from '@/components/slide/navigationNext';
+import { NavigationPrev } from '@/components/slide/navigationPrev';
 import { CallResults } from '@/icons/results/callResults';
 import { Itr } from '@/icons/results/itr';
 import { Mockup } from '@/icons/results/mockup';

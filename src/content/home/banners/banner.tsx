@@ -1,5 +1,5 @@
-import { NavigationNext } from '@/components/slide2/navigationNext';
-import { NavigationPrev } from '@/components/slide2/navigationPrev';
+import { NavigationNext } from '@/components/slide/navigationNext';
+import { NavigationPrev } from '@/components/slide/navigationPrev';
 import { Textura } from '@/components/textura';
 
 interface BannerProps {

@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import { Slide } from '@/components/slide2';
-import { NavigationNext } from '@/components/slide2/navigationNext';
-import { NavigationPrev } from '@/components/slide2/navigationPrev';
-import { PaginationSlide } from '@/components/slide2/paginationSlide';
+import { Slide } from '@/components/slide';
+import { NavigationNext } from '@/components/slide/navigationNext';
+import { NavigationPrev } from '@/components/slide/navigationPrev';
+import { PaginationSlide } from '@/components/slide/paginationSlide';
 import { AboutUs } from '@/icons/cards/about-us';
 import { Book } from '@/icons/cards/book';
 import { Strategy } from '@/icons/cards/strategy';

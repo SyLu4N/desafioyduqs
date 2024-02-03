@@ -1,4 +1,4 @@
-import { FakeApiResults } from '@/@types2/fakeApiResults';
+import { FakeApiResults } from '@/@types/fakeApiResults';
 import Link from 'next/link';
 
 interface IconResultGridProps {
