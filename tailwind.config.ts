@@ -16,9 +16,23 @@ const config = {
     container: {
       center: true,
       padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
+    },
+
+    screens: {
+      sm: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      md: '768px',
+      // => @media (min-width: 768px) { ... }
+
+      lg: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      xl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1440px',
+      // => @media (min-width: 1440px) { ... }
     },
 
     extend: {
@@ -34,6 +48,8 @@ const config = {
         'letter-400': '#4cd2ff',
         'letter-500': '#009ABF',
         'letter-600': '#005c80',
+
+        'gray-450': '#8d95a4',
 
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
